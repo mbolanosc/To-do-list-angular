@@ -2,7 +2,7 @@
 angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea', 'Service1'])
     .controller('listadetareasCtrl', function ($scope , localStorageService ,todoStorage) {
 
-     //todoStorage.storage(); //SERVICIO
+     todoStorage.storage();
    
   /*LISTADO DE TAREAS*/
 
@@ -31,9 +31,9 @@ angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea', 'Service1
 
 /*DETALLE DE TAREAS: DESCRIPCION*/
 angular.module('proyectoListaTarea', ['ListaDeTareas'])
-	.factory('DetalleTarea',function(detalleDeTarea){
-		
-		
-		
-	})
+    .factory('DetalleTarea',function(detalleDeTarea){
+        
+        
+        
+    })
 

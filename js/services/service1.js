@@ -1,21 +1,24 @@
+angular.module('Service1', ['LocalStorageModule'])
 
-var storagemodule = angular.module('Service1', [])
-   storagemodule.factory("todoStorage", function() {
+.factory("todoStorage", function(localStorageService) {
    
    var Storage = function (){
-  	 if(localStorageService.get('tareas')){
-            $scope.arregloDeTareas = localStorageService.get('tareas');
+     if(localStorageService.get('tareas')){
+            return localStorageService.get('tareas');
         }else{
-            $scope.arregloDeTareas = [];
+            return [];
         }
-    }//close
-
+    };//close
+    var setNew = function (arreglo){
+      localStorageService.set("tareas", arreglo);
+    };
     
-	 return {
-	   storage: Storage //CON MINUSCULA
+   return {
+     storage: Storage,
+     set: setNew
     }//close
  
 
-	}
+  }
 );
 
