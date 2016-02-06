@@ -1,7 +1,7 @@
 angular.module('ControllersLista', [])
 
 .controller('listadetareasCtrl', function ($scope , localStorageService) {
-	console.log("Calling Contoler");
+	//console.log("Calling Contoler");
     if(localStorageService.get('tareas')){
         $scope.arregloDeTareas = localStorageService.get('tareas');
     }else{

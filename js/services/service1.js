@@ -1,10 +1,21 @@
-angular.module('Service1', [])
 
-.factory("MyService", function() {
-  var MyName = "Mr.Bulldops";
-  return {
-    name: function() {
-      return MyName;
-    }
-  };
-})
+var storagemodule = angular.module('Service1', [])
+   storagemodule.factory("todoStorage", function() {
+   
+   var Storage = function (){
+  	 if(localStorageService.get('tareas')){
+            $scope.arregloDeTareas = localStorageService.get('tareas');
+        }else{
+            $scope.arregloDeTareas = [];
+        }
+    }//close
+
+    
+	 return {
+	   storage: Storage
+    }//close
+ 
+
+	}
+);
+
