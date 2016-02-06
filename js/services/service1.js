@@ -12,7 +12,7 @@ var storagemodule = angular.module('Service1', [])
 
     
 	 return {
-	   storage: Storage
+	   storage: Storage //CON MINUSCULA
     }//close
  
 

@@ -7,6 +7,7 @@ angular.module('ControllersLista', [])
     }else{
         $scope.arregloDeTareas = [];
     }
+
    //$scope.arregloDeTareas = [{textoTarea: 'Comprar comida para Borona', textoDescripcion:'Ir al super a comprar comida para chihuahuas.', elementSeleccionado:false}];
 
     $scope.agregarTarea = function() {
