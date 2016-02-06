@@ -7,10 +7,10 @@ angular.module('ControllersLista', [])
     }else{
         $scope.arregloDeTareas = [];
     }
-   $scope.arregloDeTareas = [{textoTarea: 'Comprar comida para Borona', textoDescripcion:'Ir al super a comprar comida para chihuahuas.', elementSeleccionado:false}];
+   //$scope.arregloDeTareas = [{textoTarea: 'Comprar comida para Borona', textoDescripcion:'Ir al super a comprar comida para chihuahuas.', elementSeleccionado:false}];
 
     $scope.agregarTarea = function() {
-     var  tareaDefault={textoTarea:$scope.texttarea, textoDescripcion:$scope.textDescripcion, elementSeleccionado:false}    
+     //var  tareaDefault={textoTarea:$scope.texttarea, textoDescripcion:$scope.textDescripcion, elementSeleccionado:false}    
         $scope.arregloDeTareas.push({
                textoTarea:$scope.texttarea,
                textoDescripcion:$scope.textDescripcion
