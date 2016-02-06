@@ -2,7 +2,7 @@
 angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea', 'Service1'])
     .controller('listadetareasCtrl', function ($scope , localStorageService ,todoStorage) {
 
-     todoStorage.storage();
+     //todoStorage.storage(); //SERVICIO
    
   /*LISTADO DE TAREAS*/
 

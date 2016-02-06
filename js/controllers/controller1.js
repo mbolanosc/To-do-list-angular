@@ -1,13 +1,14 @@
 angular.module('ControllersLista', [])
 
-.controller('listadetareasCtrl', function ($scope , localStorageService) {
+.controller('listadetareasCtrl', function ($scope , localStorageService, Service1) {
 	//console.log("Calling Contoler");
-    if(localStorageService.get('tareas')){
+    /*if(localStorageService.get('tareas')){
         $scope.arregloDeTareas = localStorageService.get('tareas');
     }else{
         $scope.arregloDeTareas = [];
-    }
-
+    }*/
+    todoStorage.storage(); //SERVICIO
+   
    //$scope.arregloDeTareas = [{textoTarea: 'Comprar comida para Borona', textoDescripcion:'Ir al super a comprar comida para chihuahuas.', elementSeleccionado:false}];
 
     $scope.agregarTarea = function() {
@@ -33,3 +34,5 @@ angular.module('ControllersLista', [])
         
     };
 });
+
+//CAMBIOS
