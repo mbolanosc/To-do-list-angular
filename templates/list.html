@@ -19,8 +19,8 @@
         <button class="btn btn-primary"  ng-click="agregarTarea()">Agregar</button>
 
         <div ng-repeat="i in arregloDeTareas">
-            <input type="checkbox" ng-model="i.elementSeleccionado"> 
-            <span ng-bind="i.textoTarea"></span>
+            <input type="checkbox" ng-model="i.elementSeleccionado">
+            <a href="#/detalles/{{arregloDeTareas.indexOf(i)}}"><span ng-bind="i.textoTarea"></span></a>
              <p><strong>Descripcion</strong></p>
             <span ng-bind="i.textoDescripcion"></span>
         </div>
