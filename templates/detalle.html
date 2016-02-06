@@ -1,5 +1,10 @@
 <div class="col-md-4 col-md-offset-4 detalle-tarea" ng-model="arregloDeTareas">
-  <h1>El Nombre es {{arregloDeTareas[whichItem].textoTarea}}</h1>
-  <h1>La Descripción es {{arregloDeTareas[whichItem].textoDescripcion}}</h1>
+  <div class="page-header">
+   <h1>El Nombre es {{arregloDeTareas[whichItem].textoTarea}}</h1>
+	   <button class="btn btn-danger"ng-click="removeItem(whichItem)">Eliminar Detalle</button>
+	  <button class="btn btn-secondary"><a href="#/list"> Lista</a></button>
+	</div>
+  <p>La Descripción es {{arregloDeTareas[whichItem].textoDescripcion}}</p>
   <h1>El Id es {{whichItem}}</h1>
+  
 </div>
