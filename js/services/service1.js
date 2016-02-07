@@ -1,6 +1,5 @@
 angular.module('Service1', ['LocalStorageModule'])
-
-.factory("todoStorage", function(localStorageService) {
+  .factory("todoStorage", function(localStorageService) {
    
    var Storage = function (){
      if(localStorageService.get('tareas')){
@@ -17,8 +16,6 @@ angular.module('Service1', ['LocalStorageModule'])
      storage: Storage,
      set: setNew
     }//close
- 
-
   }
 );
 

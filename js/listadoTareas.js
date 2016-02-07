@@ -1,13 +1,13 @@
-//ocalStorage.clear(); // para limpiar todo el local
+
 angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea', 'Service1'])
     .controller('listadetareasCtrl', function ($scope , localStorageService, todoStorage) {
 
-     todoStorage.storage();
+     todoStorage.storage(); /*call localStorage service*/
    
   /*LISTADO DE TAREAS*/
 
     $scope.agregarTarea = function() {
-    // var  tareaDefault={textoTarea:$scope.texttarea, textoDescripcion:$scope.textDescripcion, elementSeleccionado:false}    
+    
         $scope.arregloDeTareas.push({
                textoTarea:$scope.texttarea,
                textoDescripcion:$scope.textDescripcion
@@ -22,8 +22,6 @@ angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea', 'Service1
         var aListaDeTareasParaEliminar = $scope.arregloDeTareas; //array para eliminar 
         $scope.arregloDeTareas = [];
         angular.forEach(aListaDeTareasParaEliminar, function(i) {
-            if (!i.elementSeleccionado) $scope.arregloDeTareas.push(i); 
-            //i como indice como en un for for i=0; 
         });
         localStorageService.set("tareas",$scope.arregloDeTareas);
         
@@ -33,8 +31,5 @@ angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea', 'Service1
 /*DETALLE DE TAREAS: DESCRIPCION*/
 angular.module('proyectoListaTarea', ['ListaDeTareas'])
 	.factory('DetalleTarea',function(detalleDeTarea){
-		
-		
-		
-	})
+})
 

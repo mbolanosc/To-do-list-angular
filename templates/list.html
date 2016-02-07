@@ -2,28 +2,28 @@
   <div class="page-header">
         <h1>Lista de tareas</h1>
    </div>
-        <form class="form-horizontal" ng-submit='agregarTarea()'>
+        <form class="form-horizontal" name="toDoForm" nonvalidate ng-submit='agregarTarea()'>
            <div class="form-group">
              <label for="texttarea" class="control-label col-md-2">Tarea:</label>
                 <div class="col-md-10">
-                  <input type="text" ng-model="texttarea" class="form-control" required/>
+                  <input type="text" ng-model="texttarea" class="form-control" name="titulo" ng-required="true"/>
+                  <span class="validate" ng-show="toDoForm.titulo.$invalid">*Campo obligatorio</span>
                 </div>
             </div>
 
             <div class="form-group">
               <label for="textDescripcion" class="control-label col-md-2">Descripcion:</label>
-              <textarea ng-model='textDescripcion' class="form-control" rows="3" placeholder='Descripcion de la tarea' ></textarea>
+              <textarea ng-model='textDescripcion' class="form-control" rows="3" placeholder='Descripcion de la tarea' name="descrip" ng-required="true"></textarea>
+              <span class="validate" ng-show="toDoForm.descrip.$invalid">*Campo obligatorio</span>
             </div>
         </form>
 
         <button class="btn btn-primary"  ng-click="agregarTarea()">Agregar</button>
 
         <div ng-repeat="i in arregloDeTareas">
-            <input type="checkbox" ng-model="i.elementSeleccionado">
-            <a href="#/detalles/{{arregloDeTareas.indexOf(i)}}"><span ng-bind="i.textoTarea"></span></a>
-             <p><strong>Descripcion</strong></p>
+            <span class="tiny">terminar </span><input type="checkbox" ng-model="i.done" />
+            <a href="#/detalles/{{arregloDeTareas.indexOf(i)}}"><span ng-bind="i.textoTarea" ng-class="{'done':i.done}"></span></a>
+            <p><strong>Descripcion</strong></p>
             <span ng-bind="i.textoDescripcion"></span>
         </div>
-
-        <button class="btn btn-danger" ng-click="eliminarTarea()">Eliminar tareas</button>
 </div>
