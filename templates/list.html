@@ -16,16 +16,19 @@
               <textarea ng-model='textDescripcion' class="form-control" rows="3" placeholder='Descripcion de la tarea' name="descrip" ng-required="true"></textarea>
               <span class="validate" ng-show="toDoForm.descrip.$invalid">*campo obligatorio</span>
             </div>
+
+            <div class="form-group">
+                <input type="date" ng-model="pendiente.fecha" class="form-control input-lg" />
+            </div>
         </form>
 
         <button class="btn btn-primary"  ng-click="agregarTarea()">Agregar</button>
 
         <div ng-repeat="i in arregloDeTareas">
-            <input type="checkbox" ng-model="i.elementSeleccionado">
-            <!-- new line-->
-            <input type="checkbox" ng-model="i.done" />
+            <!--<input type="checkbox" ng-model="i.elementSeleccionado">-->
+            <span class="tiny">terminar </span><input type="checkbox" ng-model="i.done" />
             <a href="#/detalles/{{arregloDeTareas.indexOf(i)}}"><span ng-bind="i.textoTarea" ng-class="{'done':i.done}"></span></a>
-             <p><strong>Descripcion</strong></p>
+            <p><strong>Descripcion</strong></p>
             <span ng-bind="i.textoDescripcion"></span>
         </div>
 
