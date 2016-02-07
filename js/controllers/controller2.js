@@ -1,6 +1,6 @@
 angular.module('ControllersDetalle', ['LocalStorageModule'])
 
-.controller('detalleCtrl', function ($scope , $routeParams, $rootScope, localStorageService) {
+.controller('detalleCtrl', function ($scope , $routeParams, $rootScope, localStorageService, todoStorage) {
 
    
     $rootScope.whichItem = $routeParams.itemId;
@@ -11,14 +11,11 @@ angular.module('ControllersDetalle', ['LocalStorageModule'])
    return localStorageService.remove(key);
   }*/
 	
-	$rootScope.eliminarDetalles = function(){
-		 /*localStorage.removeItem($rootScope.whichItem);
-		localStorageService.set("tareas",$scope.arregloDeTareas);*/
+	$rootScope.eliminarDetalles = function(key){
+		$rootScope.arregloDeTareas.splice(key,1);
+		todoStorage.set($scope.arregloDeTareas);
 		
-		$rootScope.arregloDeTareas.slice($rootScope.whichItem,1);
-		//$rootScope.whichItem = null; // prueba para saber su trabaja sobre le array
-		
-		console.log(localStorageService.get('tareas'));
+		console.log($rootScope.arregloDeTareas[key]);
 	};
     
 })
