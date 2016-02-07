@@ -1,19 +1,13 @@
-localStorage.clear(); // para limpiar todo el local
-angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea'])
-    .controller('listadetareasCtrl', function ($scope , localStorageService) {
+//ocalStorage.clear(); // para limpiar todo el local
+angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea', 'Service1'])
+    .controller('listadetareasCtrl', function ($scope , localStorageService, todoStorage) {
 
-        if(localStorageService.get('tareas')){
-            $scope.arregloDeTareas = localStorageService.get('tareas');
-        }else{
-            $scope.arregloDeTareas = [];
-        }
-       $scope.arregloDeTareas = [{textoTarea: 'Comprar comida para Borona', textoDescripcion:'Ir al super a comprar comida para chihuahuas.', elementSeleccionado:false}];
-  
-
+     todoStorage.storage();
+   
   /*LISTADO DE TAREAS*/
 
     $scope.agregarTarea = function() {
-     var  tareaDefault={textoTarea:$scope.texttarea, textoDescripcion:$scope.textDescripcion, elementSeleccionado:false}    
+    // var  tareaDefault={textoTarea:$scope.texttarea, textoDescripcion:$scope.textDescripcion, elementSeleccionado:false}    
         $scope.arregloDeTareas.push({
                textoTarea:$scope.texttarea,
                textoDescripcion:$scope.textDescripcion
@@ -22,7 +16,7 @@ angular.module('ListaDeTareas', ['LocalStorageModule', 'DetalleTarea'])
             $scope.texttarea = ""; // limpiar input tarea
             $scope.textDescripcion = ""; // limpiar input descripcion
             localStorageService.set("tareas", $scope.arregloDeTareas);
-        };     
+        };    
 
     $scope.eliminarTarea = function() {
         var aListaDeTareasParaEliminar = $scope.arregloDeTareas; //array para eliminar 

@@ -1,3 +1,8 @@
+
+
+
+
+
 var theApp = angular.module('ListaDeTareas', ['LocalStorageModule', 'ControllersLista', 'ControllersDetalle', 'Service1', 'ngRoute']);
 theApp.config(['$routeProvider', function($routeProvider) {
 	$routeProvider.
@@ -13,6 +18,10 @@ theApp.config(['$routeProvider', function($routeProvider) {
 		redirectTo :'/list'
 	});
 }]);
+
+
+
+
 
 
 
