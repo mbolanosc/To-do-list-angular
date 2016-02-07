@@ -1,6 +1,5 @@
 angular.module('ControllersLista', [])
-
-.controller('listadetareasCtrl', function ($scope , localStorageService, $rootScope, todoStorage) {
+  .controller('listadetareasCtrl', function ($scope , localStorageService, $rootScope, todoStorage) {
     $rootScope.arregloDeTareas = todoStorage.storage();
     
     $scope.agregarTarea = function() {
